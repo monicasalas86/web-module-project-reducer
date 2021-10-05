@@ -1,4 +1,4 @@
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, MEMORY_PLUS } from './../actions';
+import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, MEMORY_PLUS, MEMORY_CLEAR } from './../actions';
 
 export const initialState = {
     total: 0,
@@ -47,6 +47,12 @@ const reducer = (state, action) => {
             return ({
                 ...state,
                 memory: state.total
+            })
+
+        case(MEMORY_CLEAR):
+            return ({
+                ...state,
+                memory: 0
             })
             
         default:

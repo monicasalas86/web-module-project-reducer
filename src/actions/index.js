@@ -9,6 +9,9 @@ export const CLEAR_DISPLAY = 'CLEAR_DISPLAY';
 // MEMORY_PLUS action string
 export const MEMORY_PLUS = 'MEMORY_PLUS';
 
+// MEMORY_CLEAR action string
+export const MEMORY_CLEAR = 'MEMORY_CLEAR';
+
 export const addOne = () => {
     return({type:ADD_ONE});
 }
@@ -30,4 +33,9 @@ export const clearDisplay = () => {
 // memoryPlus action creator
 export const memoryPlus = () => {
     return ({type:MEMORY_PLUS});
+}
+
+// memoryClear action creator
+export const memoryClear = () => {
+    return ({type:MEMORY_CLEAR});
 }

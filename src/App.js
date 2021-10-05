@@ -1,7 +1,7 @@
 import React, {useReducer} from 'react';
 import reducer, {initialState} from './reducers/index';
 
-import {applyNumber, changeOperation, clearDisplay, memoryPlus} from './actions/index';
+import {applyNumber, changeOperation, clearDisplay, memoryPlus, memoryClear} from './actions/index';
 
 import './App.css';
 
@@ -40,6 +40,11 @@ function App() {
     dispatch(memoryPlus(memory));
   }
 
+  // memoryClear event
+  const memClear = () => {
+    dispatch(memoryClear());
+  }
+
 
   return (
     <div className="App">
@@ -60,7 +65,7 @@ function App() {
             <div className="row">
               <CalcButton onClick={() => memPlus(state.total)} value={"M+"}/>
               <CalcButton onClick={() => addEvent(state.memory)} value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton onClick={memClear} value={"MC"}/>
             </div>
 
             <div className="row">
