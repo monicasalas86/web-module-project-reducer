@@ -1,7 +1,7 @@
 import React, {useReducer} from 'react';
 import reducer, {initialState} from './reducers/index';
 
-import {applyNumber} from './actions/index';
+import {applyNumber, changeOperation} from './actions/index';
 
 import './App.css';
 
@@ -19,10 +19,15 @@ function App() {
   //   dispatch(addOne(value));
   // }
 
-  // applyNumber event handler
-  const applyEvent = (number) => {
-    console.log('1 clicked')
+  // addNumber event handler
+  const addEvent = (number) => {
+    // console.log('1 clicked')
     dispatch(applyNumber(number));
+  }
+
+  // operatorEvent
+  const oppEvent = (opp) => {
+    dispatch(changeOperation(opp));
   }
 
 
@@ -49,27 +54,27 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton onClick={() => applyEvent(1)} value={1}/>
-              <CalcButton onClick={() => applyEvent(2)} value={2}/>
-              <CalcButton onClick={() => applyEvent(3)} value={3}/>
+              <CalcButton onClick={() => addEvent(1)} value={1}/>
+              <CalcButton onClick={() => addEvent(2)} value={2}/>
+              <CalcButton onClick={() => addEvent(3)} value={3}/>
             </div>
 
             <div className="row">
-              <CalcButton onClick={() => applyEvent(4)} value={4}/>
-              <CalcButton onClick={() => applyEvent(5)} value={5}/>
-              <CalcButton onClick={() => applyEvent(6)} value={6}/>
+              <CalcButton onClick={() => addEvent(4)} value={4}/>
+              <CalcButton onClick={() => addEvent(5)} value={5}/>
+              <CalcButton onClick={() => addEvent(6)} value={6}/>
             </div>
 
             <div className="row">
-              <CalcButton onClick={() => applyEvent(7)} value={7}/>
-              <CalcButton onClick={() => applyEvent(8)} value={8}/>
-              <CalcButton onClick={() => applyEvent(9)} value={9}/>
+              <CalcButton onClick={() => addEvent(7)} value={7}/>
+              <CalcButton onClick={() => addEvent(8)} value={8}/>
+              <CalcButton onClick={() => addEvent(9)} value={9}/>
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton onClick={() => oppEvent('+')} value={"+"}/>
+              <CalcButton onClick={() => oppEvent('*')} value={"*"}/>
+              <CalcButton onClick={() => oppEvent('-')} value={"-"}/>
             </div>
 
             <div className="row ce_button">
