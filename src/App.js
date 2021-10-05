@@ -59,7 +59,7 @@ function App() {
             
             <div className="row">
               <CalcButton onClick={() => memPlus(state.total)} value={"M+"}/>
-              <CalcButton value={"MR"}/>
+              <CalcButton onClick={() => addEvent(state.memory)} value={"MR"}/>
               <CalcButton value={"MC"}/>
             </div>
 
