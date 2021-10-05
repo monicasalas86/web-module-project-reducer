@@ -1,6 +1,8 @@
 import React, {useReducer} from 'react';
 import reducer, {initialState} from './reducers/index';
 
+import {addOne} from './actions/index';
+
 import './App.css';
 
 import TotalDisplay from './components/TotalDisplay';
@@ -10,6 +12,12 @@ function App() {
 
   // using useReducer hook to get access to the application state and the dispatch function
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  // addOne event handler
+  const addingOne = (value) => {
+    console.log('clicked 1')
+    dispatch(addOne(value));
+  }
 
   return (
     <div className="App">
@@ -34,7 +42,7 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1}/>
+              <CalcButton onClick={() => addingOne(1)} value={1}/>
               <CalcButton value={2}/>
               <CalcButton value={3}/>
             </div>
